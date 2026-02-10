@@ -2,32 +2,79 @@
 <html lang="no">
 <head>
     <meta charset="UTF-8">
-    <title>Min nettside</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otterøya.no</title>
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/main.js"></script>
 </head>
 <body>
 
 <header>
-    <h1>Min nettside</h1>
-    <nav>
-        <a href="index.html">Hjem</a>
-        <a href="about.html">Om meg</a>
-        <a href="projects.html">Prosjekter</a>
-        <a href="contact.html">Kontakt</a>
-    </nav>
+    <div class="header-content">
+        <h1>Otterøya.no</h1>
+        <nav>
+            <a href="index.html" class="active">Hjem</a>
+            <a href="about.html">Om øya</a>
+            <a href="projects.html">Prosjekter</a>
+            <a href="contact.html">Kontakt</a>
+        </nav>
+    </div>
 </header>
 
 <main>
-    <section class="hero">
-        <h2>Velkommen</h2>
-        <p>skal bli den nye otterøysiden.</p>
-        <a class="button" href="projects.html">Se prosjekter</a>
+    <section class="hero reveal">
+        <p class="eyebrow">Velkommen til</p>
+        <h2>Otterøya – lokalt, levende og oppdatert</h2>
+        <p>Her finner du nyheter, aktiviteter, prosjekter og høydepunkter fra øya. Vi har gjort siden mykere, raskere og mer innholdsrik.</p>
+        <div class="hero-actions">
+            <a class="button" href="projects.html">Se prosjekter</a>
+            <a class="button secondary" href="about.html">Les mer om øya</a>
+        </div>
+    </section>
+
+    <section class="stats-grid reveal">
+        <article class="stat-card">
+            <h3>120+</h3>
+            <p>Innbyggere i lokalmiljøet</p>
+        </article>
+        <article class="stat-card">
+            <h3>8</h3>
+            <p>Pågående initiativer</p>
+        </article>
+        <article class="stat-card">
+            <h3>24/7</h3>
+            <p>Oppdatert informasjon</p>
+        </article>
+    </section>
+
+    <section class="feature-grid reveal">
+        <article class="card">
+            <h3>Aktivitetskalender</h3>
+            <p>Få med deg dugnader, arrangementer og lokale møteplasser gjennom hele året.</p>
+        </article>
+        <article class="card">
+            <h3>Krimkart (kommer)</h3>
+            <p>Et nytt kartverktøy for å samle lokal informasjon på en ryddig og visuell måte.</p>
+        </article>
+        <article class="card">
+            <h3>Historier fra øya</h3>
+            <p>Korte artikler og bilder fra folk som bor her – delt av lokalsamfunnet selv.</p>
+        </article>
+    </section>
+
+    <section class="newsletter reveal">
+        <h3>Hold deg oppdatert</h3>
+        <p>Meld deg på nyhetsbrev for siste nytt fra Otterøya.</p>
+        <form class="inline-form">
+            <label class="sr-only" for="email">E-post</label>
+            <input id="email" type="email" placeholder="din@epost.no" required>
+            <button type="submit">Meld på</button>
+        </form>
     </section>
 </main>
 
 <footer>
-    <p>otterøya</p>
+    <p>© 2026 otterøya.no</p>
 </footer>
 
 </body>
