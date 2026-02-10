@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <title>Min nettside</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Otterøya.no</title>
+    <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/main.js"></script>
 </head>
 <body>
-
-<header>
-    <h1>Min nettside</h1>
-    <nav>
-        <a href="index.html">Hjem</a>
-        <a href="about.html">Om meg</a>
-        <a href="projects.html">Prosjekter</a>
-        <a href="contact.html">Kontakt</a>
-    </nav>
+<header class="site-header">
+    <div class="container header-row">
+        <h1 class="logo">Otterøya.no</h1>
+        <nav>
+            <a href="index.html" class="active">Hjem</a>
+            <a href="about.html">Om øya</a>
+            <a href="projects.html">Prosjekter</a>
+            <a href="contact.html">Kontakt</a>
+        </nav>
+    </div>
 </header>
 
-<main>
-    <section class="hero">
-        <h2>Velkommen</h2>
-        <p>skal bli den nye otterøysiden.</p>
-        <a class="button" href="projects.html">Se prosjekter</a>
+<main class="container">
+    <section class="hero reveal">
+        <p class="eyebrow">Velkommen til</p>
+        <h2>En enklere og finere side for Otterøya</h2>
+        <p>
+            Her samler vi nyheter, aktiviteter og prosjekter. Siden er laget med
+            fokus på tydelig innhold, rolige farger og smooth animasjoner.
+        </p>
+        <div class="hero-actions">
+            <a class="button" href="projects.html">Se prosjekter</a>
+            <a class="button secondary" href="about.html">Les om øya</a>
+        </div>
+    </section>
+
+    <section class="grid reveal">
+        <article class="card">
+            <h3>Aktiviteter</h3>
+            <p>Oversikt over det som skjer på øya gjennom året.</p>
+        </article>
+        <article class="card">
+            <h3>Lokale nyheter</h3>
+            <p>Korte oppdateringer fra nærmiljøet.</p>
+        </article>
+        <article class="card">
+            <h3>Kart og info</h3>
+            <p>Mer visuell informasjon kommer snart.</p>
+        </article>
     </section>
 </main>
 
 <footer>
-    <p>otterøya</p>
+    <p>© 2026 otterøya.no</p>
 </footer>
-
 </body>
 </html>
+
