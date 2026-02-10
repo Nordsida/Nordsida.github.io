@@ -1,82 +1,198 @@
+:root {
+    --bg: #f3f6ff;
+    --surface: #ffffff;
+    --ink: #1b1f2a;
+    --muted: #5f6b85;
+    --primary: #2f6bff;
+    --primary-strong: #2457d6;
+    --line: #dbe2f3;
+    --shadow: 0 10px 30px rgba(27, 31, 42, 0.1);
+}
+
 * {
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    background: #f5f5f5;
-    color: #222;
+    background: radial-gradient(circle at top, #f8faff 0%, var(--bg) 55%);
+    color: var(--ink);
+    line-height: 1.6;
 }
 
-header {
-    background: #111;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.2rem;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(17, 24, 39, 0.86);
+    backdrop-filter: blur(8px);
     color: white;
-    padding: 1rem 2rem;
+}
+
+.header-row {
+    padding: 0.9rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
 }
 
 nav a {
     color: white;
-    margin-right: 1rem;
     text-decoration: none;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    transition: background-color 200ms ease, transform 200ms ease;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-1px);
 }
 
 nav a.active {
-    text-decoration: underline;
+    background: rgba(255, 255, 255, 0.24);
 }
 
 main {
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
 }
 
 .hero {
-    background: white;
-    padding: 3rem;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #ffffff 0%, #eaf0ff 100%);
+    padding: clamp(1.8rem, 4vw, 3rem);
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
 }
 
-.button {
-    display: inline-block;
+.eyebrow {
+    margin: 0 0 0.3rem;
+    color: var(--primary-strong);
+    font-weight: 700;
+}
+
+.hero h2 {
+    margin-top: 0;
+    line-height: 1.2;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+}
+
+.hero-actions {
     margin-top: 1rem;
-    background: #0077ff;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.button,
+button {
+    border: none;
+    background: var(--primary);
     color: white;
-    padding: 0.6rem 1rem;
+    padding: 0.62rem 1rem;
+    border-radius: 10px;
     text-decoration: none;
-    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
+}
+
+.button:hover,
+button:hover {
+    background: var(--primary-strong);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(36, 87, 214, 0.25);
+}
+
+.button.secondary {
+    background: #edf2ff;
+    color: var(--primary-strong);
 }
 
 .grid {
+    margin-top: 1.3rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
+    background: var(--surface);
+    padding: 1.2rem;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    transition: transform 220ms ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
 }
 
 form {
-    max-width: 400px;
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
+    max-width: 520px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    padding: 1.2rem;
+    border-radius: 14px;
 }
 
 form label {
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
-    padding: 0.5rem;
+    border: 1px solid #c6d0e8;
+    border-radius: 10px;
+    padding: 0.6rem 0.75rem;
 }
 
-button {
-    background: #0077ff;
-    color: white;
-    border: none;
-    padding: 0.6rem 1rem;
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 1.2rem;
 }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+    .header-row {
+        flex-direction: column;
+        align-items: flex-start;
